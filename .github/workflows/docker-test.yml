@@ -21,6 +21,6 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: actions/git-action@v1
+      uses: actions/git-action@v2
       with:
         who-to-greet: 'Mona the Octocat'
