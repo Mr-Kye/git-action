@@ -1,18 +1,4 @@
-name: git-action-test
-
-on:
-  push:
-    # Publish `master` as Docker `latest` image.
-    branches:
-      - master
-
-    # Publish `v1.2.3` tags as releases.
-    tags:
-      - v*
-
-  # Run tests for any PRs.
-  pull_request:
-
+on: [push]
 
 jobs:
   hello_world_job:
@@ -24,3 +10,6 @@ jobs:
       uses: actions/git-action@v2
       with:
         who-to-greet: 'Mona the Octocat'
+    # Use the output from the `hello` step
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
