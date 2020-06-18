@@ -1,4 +1,5 @@
 #!/bin/sh -l
 
-who=${1:-world}
-echo "Hello" $who
+echo "Hello $1"
+time=$(date)
+echo "::set-output name=time::$time"
