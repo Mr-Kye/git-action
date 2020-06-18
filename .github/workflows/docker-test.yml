@@ -1,25 +1,14 @@
-name: Docker-test
+name: git-action-test
 
-on:
-  push:
-    # Publish `master` as Docker `latest` image.
-    branches:
-      - master
-
-    # Publish `v1.2.3` tags as releases.
-    tags:
-      - v*
-
-  # Run tests for any PRs.
-  pull_request:
+on: [push]
 
 jobs:
   hello_world_job:
-    name: A job to say hello
     runs-on: ubuntu-latest
+    name: A job to say hello
     steps:
     - name: Hello world action step
       id: hello
-      uses: $USERNAME/git-action@master
+      uses: actions/git-action@v1
       with:
         who-to-greet: 'Mona the Octocat'
