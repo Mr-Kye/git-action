@@ -1,9 +1,22 @@
-on: push
+name: Docker-test
+
+on:
+  push:
+    # Publish `master` as Docker `latest` image.
+    branches:
+      - master
+
+    # Publish `v1.2.3` tags as releases.
+    tags:
+      - v*
+
+  # Run tests for any PRs.
+  pull_request:
 
 jobs:
   hello_world_job:
-    runs-on: ubuntu-latest
     name: A job to say hello
+    runs-on: ubuntu-latest
     steps:
     - name: Hello world action step
       id: hello
