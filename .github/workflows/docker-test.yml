@@ -7,6 +7,6 @@ jobs:
     steps:
     - name: Hello world action step
       id: hello
-      uses: $USERNAME/hello-world-docker-action@master
+      uses: $USERNAME/git-action@master
       with:
         who-to-greet: 'Mona the Octocat'
